@@ -13,6 +13,7 @@
       <div ref="tags" class="multiselect__tags">
         <span
           v-for="option of visibleValue"
+          :style="getTagStyle(option)"
           onmousedown="event.preventDefault()"
           class="multiselect__tag">
             <span v-text="getOptionLabel(option)"></span>

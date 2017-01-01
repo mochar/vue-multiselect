@@ -185,6 +185,18 @@ module.exports = {
       }
     },
     /**
+     * Function to style the tags.
+     * Returned object is passed to :style binding of each tag.
+     * @default false
+     * @type {Function}
+     */
+    customTagStyle: {
+      type: Function,
+      default (option) {
+        return {}
+      }
+    },
+    /**
      * Disable / Enable tagging
      * @default false
      * @type {Boolean}
@@ -399,6 +411,17 @@ module.exports = {
       if (!option && option !== 0) return ''
       if (option.isTag) return option.label
       return this.customLabel(option, this.label) || ''
+    },
+    /**
+     * Returns an empty object when option is null/undefined
+     * Returns the customTagStyle() result
+     *
+     * @param  {Object||String||Integer} Passed option
+     * @returns {Object} :style object
+     */
+    getTagStyle (option) {
+      if (!option && option !== 0) return {}
+      return this.customTagStyle(option) || {}
     },
     /**
      * Add the given option to the list of selected options
