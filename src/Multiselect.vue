@@ -393,13 +393,13 @@ fieldset[disabled] .multiselect {
 
 .multiselect__tag-icon:after {
   content: "×";
-  color: #266d4d;
+  color: rgba(0, 0, 0, 0.5);
   font-size: 14px;
 }
 
 .multiselect__tag-icon:focus,
 .multiselect__tag-icon:hover {
-  background: #369a6e;
+  background: rgba(0, 0, 0, 0.1);
 }
 
 .multiselect__tag-icon:focus:after,
